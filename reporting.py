@@ -162,9 +162,9 @@ class Reporting:
         annees, pops = [base_year], [pop]
 
         for an in range(base_year + 1, fin + 1):
-            births = taux_nat / 1000 * pop
-            deaths = taux_mort / 1000 * pop
-            pop = pop + births - deaths
+            nee = taux_nat / 1000 * pop
+            mort = taux_mort / 1000 * pop
+            pop = pop + nee - mort
             annees.append(an)
             pops.append(pop)
 
