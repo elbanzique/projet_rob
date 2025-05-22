@@ -3,12 +3,10 @@ from Conversion import Conversion
 from CollectionDemographique import CollectionDemographique
 from reporting import Reporting
 
-
 def charger_donnees(path="./data.csv"):
-    with open(path, encoding="utf-8") as f:
-        lignes = f.readlines()
+    with open(path, 'r', encoding="utf-8") as entree:
+        lignes = entree.readlines()
     return CollectionDemographique(Conversion.nettoyage(lignes))
-
 
 def menu():
     data = charger_donnees()
